@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./library-outline.svg">
+    <title>Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <button class="add-book">Add Book</button>
+    <dialog class="modal">
+        <form action="" method="post">
+            <div>
+            <label for="title">Title</label><br>
+            <input type="text" id="title" name="title">
+            </div>
+
+            <div>
+            <label for="author">Author</label><br>
+            <input type="text" id="author" name="author">
+            </div>
+
+            <div>
+            <label for="pages">Number Of Pages</label><br>
+            <input type="number" name="pages" id="pages">
+            </div>
+
+            <div class="buttons">
+            <button type="submit" class="add">add</button>
+            <button class="close-modal" > ✖ </button>
+            </div>
+
+        </form>
+    </dialog>
+</body>
+</html>
