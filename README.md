@@ -1,3 +1,3 @@
 # My-Library
 
-A digitalform of library to keep track of your books. The onesyou have read, those you are reading and basically keep your reading data.
+A digital form of a library to keep track of your books. The ones you have read, those you are reading and keep your reading data.
