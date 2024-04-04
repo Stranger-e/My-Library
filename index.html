@@ -11,7 +11,7 @@
 <body>
     <button class="add-book">Add Book</button>
     <dialog class="modal">
-        <form action="" method="post">
+        <form action="" method="post" class="book-form">
             <div>
             <label for="title">Title</label><br>
             <input type="text" id="title" name="title">
@@ -33,6 +33,17 @@
             </div>
         </form>
     </dialog>
-    <div class="display"></div>
+    <div class="display">
+        <div class="book">
+            <h3>.title</h3>
+            <p>Author: ${book.author}</p>
+            <p>Number Of Pages: ${book.pages}</p>
+            <form>
+                <label for="read">Read</label>
+                <input type="checkbox" name="read" id="read">
+            </form>
+            <button> Delete</button>
+        </div>
+    </div>
 </body>
 </html>

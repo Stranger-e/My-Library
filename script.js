@@ -40,15 +40,32 @@ function displayBooks(){
     const bookDisplay = document.querySelector('.display');
     bookDisplay.innerHTML = '';
 
-    myLibrary.forEach(book => {
+    myLibrary.forEach((book, index) => {
         const bookInfo = document.createElement('div');
+        bookInfo.classList.add('book');
         bookInfo.innerHTML = `
             <h3>${book.title}</h3>
             <p>Author: ${book.author}</p>
-            <p>Pages: ${book.pages}</p>
-            <hr>`;
+            <p>Number Of Pages: ${book.pages}</p>
+            <form>
+                <label for="read">Read</label>
+                <input type="checkbox" name="read" id="read">
+            </form>
+            <button class="delete"> Delete</button>`;
         bookDisplay.appendChild(bookInfo);
     });
+
+    const deleteButton = document.querySelectorAll('.delete');
+    deleteButton.forEach(button =>{
+        button.addEventListener('click', deleteBook);
+    })
+
+}
+
+function deleteBook(event){
+    const index = event.target.dataset.index;
+    myLibrary.splice(index, 1);
+    displayBooks();
 }
 
 document.querySelector('form').addEventListener('submit', addBookToLibrary);
