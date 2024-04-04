@@ -31,8 +31,24 @@ function addBookToLibrary(event){
 
     const newBook = new Book(title, author, pages);
     myLibrary.push(newBook);
+    displayBooks();
     form.reset();
     modal.close();
+}
+
+function displayBooks(){
+    const bookDisplay = document.querySelector('.display');
+    bookDisplay.innerHTML = '';
+
+    myLibrary.forEach(book => {
+        const bookInfo = document.createElement('div');
+        bookInfo.innerHTML = `
+            <h3>${book.title}</h3>
+            <p>Author: ${book.author}</p>
+            <p>Pages: ${book.pages}</p>
+            <hr>`;
+        bookDisplay.appendChild(bookInfo);
+    });
 }
 
 document.querySelector('form').addEventListener('submit', addBookToLibrary);
